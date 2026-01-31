@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "leaflet/dist/leaflet.css";
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply m-0 min-h-screen bg-slate-100 text-slate-800 antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Dialog backdrop */
+dialog::backdrop {
+  @apply bg-slate-900/60 backdrop-blur-sm;
+}
+
+.leaflet-default-icon-path {
+  background-image: url(https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png);
+}
+
+/* Focus ring for accessibility */
+@layer utilities {
+  .focus-ring {
+    @apply outline-none ring-2 ring-amber-500 ring-offset-2;
+  }
+}
